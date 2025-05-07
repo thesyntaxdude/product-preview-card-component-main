@@ -15,33 +15,40 @@
     --white: hsl(0, 0%, 100%);
     --medium_text: 500;
     --heavy_text: 700;
-    --body_font_size: clamp(0.875rem, 0.65rem + 1.5vw, 3rem);
-    --main_font: Fraunces;
-    --secondary_font: Montserrat;
+    --body_font_size: clamp(0.875rem, 0.8rem + 0.7vw, 3rem);
+    --secondary_font: Fraunces;
+    --main_font: Montserrat;
 }
+
 body{
-    font-family: 'Fraunces','Montserrat', sans-serif;
+    font-family: var(--main_font), sans-serif;
     font-size: var(--body_font_size);
     color: var(--grey);
     background-color: var(--cream);
+    padding: 0.5em;
+    font-weight: var(--medium_text);
 }
 
-img{
+.container {
+    max-width: 90%;
+    margin: 20px auto;
+    background-color: var(--white);
+    border-radius: 0.8em;
+}
+
+figure > picture > img{
     max-width: 100%;
     margin-bottom: 1.4em;
-    border-top-right-radius: 1.9em;
-    border-top-left-radius: 1.9em;
+    border-top-right-radius: 0.7em;
+    border-top-left-radius: 0.7em;
 }
 
 .details_container{
+    max-inline-size: 34.5ch;
     margin: 0 auto;
-    width: 100%;
 }
-.container{
-    border: 1px solid;
-    width: 90%;
-    margin: 30px auto;
-    background-color: var(--white);
+.details{
+    padding: 0 1em 1.5em;
 }
 
 .product_type{
@@ -51,6 +58,9 @@ img{
     font-weight: var(--medium_text);
     margin-bottom: 1em;
     margin-top: 0.1em;
+}
+
+h1,.big{
     font-family: var(--secondary_font);
 }
 
@@ -58,8 +68,63 @@ h1{
     font-weight: var(--heavy_text);
     color: var(--black);
     margin-bottom: 0.5em;
+    line-height: 1em;
+    font-size: 2rem;
 }
 
-p > .break{
+p{
+    line-height: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+/*p > .break{
     display: block;
+}*/
+.price{
+    display: flex;
+    max-width: 70%;
+    height: 2.5em;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.price > .big{
+    font-size: 2rem;
+    font-weight: var(--heavy_text);
+    color: var(--green500);
+}
+
+.price > .small{
+    text-decoration: line-through;
+    font-size: 1rem;
+}
+
+button{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    padding: 1.4em;
+    border-radius: 0.5em;
+    border: none;
+    background-color: var(--green500);
+
+    &:hover{
+        cursor: pointer;
+        background-color: var(--green700);
+    }
+}
+
+.button-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+button > div > a{
+    text-decoration: none;
+    color: var(--white);
+    font-weight: var(--heavy_text);
+    font-size: 1rem;
 }
