@@ -29,14 +29,14 @@ body{
     font-weight: var(--medium_text);
 }
 
-.container {
+main {
     max-width: 90%;
     margin: 20px auto;
     background-color: var(--white);
     border-radius: 0.8em;
 }
 
-figure > picture > img{
+picture > img{
     max-width: 100%;
     margin-bottom: 1.4em;
     border-top-right-radius: 0.7em;
@@ -130,4 +130,48 @@ button > div{
     color: var(--white);
     font-weight: var(--heavy_text);
     font-size: 1rem;
+}
+
+@media screen and (min-width: 37.6em) {
+   body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+   }
+    main{
+        max-width: 60vw;
+        justify-content: center;
+        align-items: center;
+        max-height: 56vh;
+        
+    }
+    .details_container {
+        display: flex;
+        margin: 0;
+        max-inline-size: 100%;
+    }
+
+    .img_container,
+    .details {
+        flex: 1;
+    }
+
+    .img_container {
+        position: relative;
+    }
+
+    .img_container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.8em 0 0 0.8em;
+    }
+
+    .details {
+        padding: 1.8em;
+    }
 }
